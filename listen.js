@@ -126,6 +126,7 @@ const PORT = process.env.PORT || 8080;
               headers: {
                 "user-agent": userAgent,
                 "x-tt-params": xTtParams,
+                "Accept-Encoding": "gzip,deflate,compress"
               },
               url: TT_REQ_PERM_URL,
             };
