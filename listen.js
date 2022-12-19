@@ -130,7 +130,11 @@ const PORT = process.env.PORT || 8080;
               },
               url: TT_REQ_PERM_URL,
             };
-            const resp = await axios(options);
+            const resp = await axios(options).catch(function (error) {
+              // handle error
+              console.log(error);
+              response.end();
+            });
             const { data } = resp;
             let output = JSON.stringify({
               status: "ok",
